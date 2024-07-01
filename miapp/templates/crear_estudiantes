@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form action="/registrar_estudiante/" method="POST" class="form-container" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 class="form-title">Ingresar Nuevo Estudiante</h2>
+
+    <table class="form-table">
+        <tr class="form-row">
+            <td><label for="codigo" class="form-label">Código:</label></td>
+            <td><input type="text" id="codigo" name="codigo" minlength="1" maxlength="10" required class="form-input"></td>
+        </tr>
+        <tr class="form-row">
+            <td><label for="dni" class="form-label">DNI:</label></td>
+            <td><input type="text" id="dni" name="dni" minlength="1" maxlength="8" required class="form-input"></td>
+        </tr>
+        <tr class="form-row">
+            <td><label for="nombre" class="form-label">Nombre:</label></td>
+            <td><input type="text" id="nombre" name="nombre" minlength="3" maxlength="50" required class="form-input"></td>
+        </tr>
+        <tr class="form-row">
+            <td><label for="apepat" class="form-label">Apellido Paterno:</label></td>
+            <td><input type="text" id="apepat" name="apepat" minlength="3" maxlength="50" required class="form-input"></td>
+        </tr>
+        <tr class="form-row">
+            <td><label for="apemat" class="form-label">Apellido Materno:</label></td>
+            <td><input type="text" id="apemat" name="apemat" minlength="3" maxlength="50" required class="form-input"></td>
+        </tr>
+        <tr class="form-row">
+            <td><label for="direccion" class="form-label">Dirección:</label></td>
+            <td><input type="text" id="direccion" name="direccion" maxlength="100" required class="form-input"></td>
+        </tr>
+        <tr class="form-row">
+            <td><label for="telefono" class="form-label">Teléfono:</label></td>
+            <td><input type="text" id="telefono" name="telefono" maxlength="15" required class="form-input"></td>
+        </tr>
+        <tr class="form-row">
+            <td><label for="estado" class="form-label">Estado:</label></td>
+            <td><input type="text" id="estado" name="estado" minlength="1" maxlength="1" required class="form-input"></td>
+        </tr>
+    </table>
+    <button type="submit" class="form-button">Guardar Estudiante</button>
+</form>
+{% endblock %}
